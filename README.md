@@ -33,7 +33,7 @@ build:
 image: epcallan/phpunit-php7
 
 before_script:
-  - php composer.phar install --no-progress --no-plugins -o
+  - composer install
 
 in_docker:
   stage: test
