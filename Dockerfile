@@ -5,6 +5,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update -yqq \
     && apt-get install git zlib1g-dev -y \
     && docker-php-ext-install zip \
+    && docker-php-ext-install pdo_mysql \
     && curl -fsSL https://getcomposer.org/installer | php \
     && mv composer.phar /usr/local/bin/composer \
     && composer global require phpunit/phpunit \
