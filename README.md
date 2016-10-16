@@ -42,3 +42,12 @@ in_docker:
   only:
     - master
 ```
+
+## Building Additions Yourself
+
+If you want to add Postgres or ODBC or another PHP extension to the mix,
+simply clone this repository and add the additions into the `Dockerfile` and
+then run `docker-build.sh`
+
+If you'd like to see this enable a basic extension, feel free to submit an
+issue.
