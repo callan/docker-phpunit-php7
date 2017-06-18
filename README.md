@@ -1,28 +1,35 @@
 # PHP7 - PHPUNIT Docker
 
-A Dockerfile to have the following components ready-to-go
-without having to install them.
+A series of docker files with different things for working with Composer, PHPUnit, XDebug,
+Sqlite3, and MySQL to make CI/CD a little easier.
 
-Intended for usage in a CI environment (Drone/Gitlab/etc.):
- - PHP7 (based off the [official](https://hub.docker.com/_/php/) PHP Docker, using `php:7-cli`)
+Intended for usage in a CI environment (Travis, Gitlab, Drone, etc.):
+ - PHP7 (based off the [official](https://hub.docker.com/_/php/) PHP Docker)
  - XDebug (Latest through PECL)
  - Composer (Latest through installer)
- - PHPUnit (Latest through Composer)
+ - PHPUnit (5.x and 6.x depending on docker tags, through composer)
 
 The docker hub page can be found here:
-[hub.docker.com/r/epcallan/phpunit-php7](https://hub.docker.com/r/epcallan/phpunit-php7/)
+[epcallan/php7-testing-phpunit](https://hub.docker.com/r/epcallan/php7-testing-phpunit/)
+
+## Tags And Options
+
+ - `7.1-phpunit6`: PHP7.1, PHPUnit 6.x
+ - `7.1-phpunit5`: PHP7.1, PHPUnit 5.x
+ - `7.0-phpunit6`: PHP7.0, PHPUnit 6.x
+ - `7.0-phpunit5`: PHP7.0, PHPUnit 5.x
 
 ## Usage
 
 ### Command Line
 ```
-docker pull epcallan/phpunit-php7
+docker pull epcallan/php7-testing-phpunit:7.1-phpunit5
 ```
 
 ### Drone
 ```
 build:
-  image: epcallan/phpunit-php7
+  image: epcallan/php7-testing-phpunit:7.1-phpunit5
   commands:
     - composer install
     - phpunit
@@ -30,7 +37,7 @@ build:
 
 ### Gitlab
 ```
-image: epcallan/phpunit-php7
+image: epcallan/php7-testing-phpunit:7.1-phpunit5
 
 before_script:
   - composer install
@@ -45,9 +52,10 @@ in_docker:
 
 ## Building Additions Yourself
 
-If you want to add Postgres or ODBC or another PHP extension to the mix,
-simply clone this repository and add the additions into the `Dockerfile` and
-then run `docker-build.sh`
+If you want to add Postgres or ODBC or another PHP extension to the mix, simply clone this repository and add the additions into any of the `Dockerfile`'s and then build them (for example: `docker build php7.1-phpunit6`).
 
-If you'd like to see this enable a basic extension, feel free to submit an
-issue.
+If you'd like to see this enable a basic extension, feel free to submit an issue.
+
+## Copyright
+
+MIT Licensed. For complete license, see `LICENSE`
