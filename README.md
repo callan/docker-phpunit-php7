@@ -14,6 +14,8 @@ The docker hub page can be found here:
 
 ## Tags And Options
 
+ - `7.2-phpunit6`: PHP7.2, PHPUnit 6.x
+ - `7.2-phpunit5`: PHP7.2, PHPUnit 5.x
  - `7.1-phpunit6`: PHP7.1, PHPUnit 6.x
  - `7.1-phpunit5`: PHP7.1, PHPUnit 5.x
  - `7.0-phpunit6`: PHP7.0, PHPUnit 6.x
