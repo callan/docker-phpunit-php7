@@ -5,17 +5,19 @@ Sqlite3, and MySQL to make CI/CD a little easier.
 
 Intended for usage in a CI environment (Travis, Gitlab, Drone, etc.):
  - PHP7 (based off the [official](https://hub.docker.com/_/php/) PHP Docker)
- - XDebug (Latest through PECL, only for 7.0 and 7.1 until it becomes stable for 7.2)
+ - XDebug (Latest through PECL, only for 7.0, 7.1, and 7.2)
  - Composer (Latest through installer)
- - PHPUnit (5.x and 6.x depending on docker tags, through composer)
+ - PHPUnit (5.x, 6.x, and 7.x depending on docker tags, through composer)
 
 The docker hub page can be found here:
 [epcallan/php7-testing-phpunit](https://hub.docker.com/r/epcallan/php7-testing-phpunit/)
 
 ## Tags And Options
 
- - `7.2-phpunit6`: PHP7.2, PHPUnit 6.x
- - `7.2-phpunit5`: PHP7.2, PHPUnit 5.x
+ - `7.2-phpunit7`: PHP7.2, PHPUnit 7.x, XDebug
+ - `7.2-phpunit6`: PHP7.2, PHPUnit 6.x, XDebug
+ - `7.2-phpunit5`: PHP7.2, PHPUnit 5.x, XDebug
+ - `7.1-phpunit7`: PHP7.1, PHPUnit 7.x, XDebug
  - `7.1-phpunit6`: PHP7.1, PHPUnit 6.x, XDebug
  - `7.1-phpunit5`: PHP7.1, PHPUnit 5.x, XDebug
  - `7.0-phpunit6`: PHP7.0, PHPUnit 6.x, XDebug
