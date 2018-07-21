@@ -17,5 +17,7 @@ RUN pecl install xdebug \
         /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
     && php -m | grep xdebug
 
+RUN echo "memory_limit=-1" > "$PHP_INI_DIR/conf.d/memory-limit.ini"
+
 ENV PATH /root/.composer/vendor/bin:$PATH
 CMD ["phpunit"]
